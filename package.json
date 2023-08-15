@@ -1,0 +1,34 @@
+{
+  "name": "as_react",
+  "description": "React by AS",
+  "version": "1.0.0",
+  "main": "App.js",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "scripts": {
+    "start": "npx parcel index.html",
+    "build": "npx build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluffsJargon/AS_React.git"
+  },
+  "keywords": [
+    "react",
+    "ASReact",
+    "NamasteReact"
+  ],
+  "author": "sakshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fluffsJargon/AS_React/issues"
+  },
+  "homepage": "https://github.com/fluffsJargon/AS_React#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
