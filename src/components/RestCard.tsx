@@ -1,7 +1,7 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
 
-export default function RestCard({ resData }) {
+export default function RestCard({resData}) {
   const { cloudinaryImageId, name, cuisines, avgRatingString } = resData?.info;
 
   return (
@@ -15,7 +15,7 @@ export default function RestCard({ resData }) {
       ></img>
       <h3>{name}</h3>
       <h5>{cuisines.join(", ")}</h5>
-      <h5>{avgRatingString}</h5>
+      <h5>{avgRatingString} stars</h5>
     </div>
   );
 }
