@@ -2,6 +2,8 @@ import React from "react";
 import RestCard from "./RestCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // Normal JS variable
 // let restList = swiggyData.restaurants;
@@ -27,9 +29,11 @@ export const Body = () => {
         ?.restaurants;
 
     setListOfRest(newList);
-    setFilteredListOfRest(newList)
+    setFilteredListOfRest(newList);
   };
 
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus == false) return <h3>Looks like you are offline!! Please check ur shitty connection!</h3>
   //Conditional rendering
 
   return listOfRest.length === 0 ? (
@@ -37,14 +41,15 @@ export const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search-box">
+        <div className="flex">
           <input
             value={inputVal}
+            className=" border-black border w-40 px-4 mx-2"
             onChange={(e) => {
               setInputVal(e.target.value);
             }}
           />
-          <button
+          <button className=" border-black border w-20 bg-green-100 rounded-lg"
             onClick={() => {
               console.log("listOfRest" + listOfRest);
 
@@ -59,7 +64,7 @@ export const Body = () => {
             Search
           </button>
         </div>
-        <button
+        {/* <button
           className="filter-btn"
           onClick={() => {
             const filteredRatingList = listOfRest.filter(
@@ -70,11 +75,17 @@ export const Body = () => {
           }}
         >
           Top rated restaraunt
-        </button>
+        </button> */}
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredListOfRest.map((restaurant) => (
-          <RestCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            className=""
+            key={restaurant.info.id}
+            to={"./restarauntMenu/" + restaurant.info.id}
+          >
+            <RestCard resData={restaurant}/>
+          </Link>
         ))}
       </div>
     </div>

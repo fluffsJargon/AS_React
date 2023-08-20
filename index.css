@@ -1,4 +1,10 @@
-#heading {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* #heading {
     color: Red
 }
 .header {
@@ -67,3 +73,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+.linkStyle, .linkStyle:hover, .linkStyle:active{
+    text-decoration: none;
+    color: black;
+  } */
