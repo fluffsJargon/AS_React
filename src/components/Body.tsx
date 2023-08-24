@@ -1,9 +1,11 @@
-import React from "react";
-import RestCard from "./RestCard";
+import React, { useContext } from "react";
+import RestCard, { withPromotedLabel } from "./RestCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { REST_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 // Normal JS variable
 // let restList = swiggyData.restaurants;
@@ -14,13 +16,16 @@ export const Body = () => {
   const [inputVal, setInputVal] = useState("");
   const [filteredListOfRest, setFilteredListOfRest] = useState([]);
 
+  const RestCardPromoted = withPromotedLabel(RestCard);
+  const {loggedInUser, setUserName} = useContext(UserContext);
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9121181&lng=77.6445548&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      REST_URL
     );
     const json = await data.json();
     //Optional chaining
@@ -33,8 +38,12 @@ export const Body = () => {
   };
 
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus == false) return <h3>Looks like you are offline!! Please check ur shitty connection!</h3>
+  if (onlineStatus == false)
+    return (
+      <h3>Looks like you are offline!! Please check ur shitty connection!</h3>
+    );
   //Conditional rendering
+  console.log(listOfRest)
 
   return listOfRest.length === 0 ? (
     <Shimmer />
@@ -49,20 +58,27 @@ export const Body = () => {
               setInputVal(e.target.value);
             }}
           />
-          <button className=" border-black border w-20 bg-green-100 rounded-lg"
+          <button
+            className=" border-black border w-20 bg-green-50 rounded-lg"
             onClick={() => {
-              console.log("listOfRest" + listOfRest);
-
               const filteredList = listOfRest.filter((res) =>
                 res.info.name.toLowerCase().includes(inputVal.toLowerCase())
               );
-              console.log("filteredList" + filteredList);
-
               setFilteredListOfRest(filteredList);
             }}
           >
             Search
           </button>
+
+            <label className='mx-4'>Username: </label>
+          <input
+            value={loggedInUser}
+            className=" border-black border w-40 px-2"
+            onChange={(e) => {
+              setUserName(e.target.value);
+
+            }}
+          />
         </div>
         {/* <button
           className="filter-btn"
@@ -84,7 +100,7 @@ export const Body = () => {
             key={restaurant.info.id}
             to={"./restarauntMenu/" + restaurant.info.id}
           >
-            <RestCard resData={restaurant}/>
+            {restaurant.info.avgRating>4.3 ? <RestCardPromoted resData={restaurant} /> : <RestCard resData={restaurant} />}
           </Link>
         ))}
       </div>
