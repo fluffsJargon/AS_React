@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -16,11 +16,12 @@ const cartSlice = createSlice({
         },
         //originalState= "pizza" 
         clearCart: (state) => {
-          //  onsole.log(state) --> pizza
-          // state = []
+          //  console.log(state) --> pizza
+          // state = [] --> just a local copy
           // console.log(state) --> [] local state is empty but pizza remains same
 
-          console.log(cuurent(state)); //  console.log(state)--> redux form some proxy object
+             console.log(current(state)); // --> from original state
+             // console.log(state)--> redux form some proxy object
             state.items.length = 0 //  this mutates the state
             // state = []  is wrong, not mutating the state, just adding a  reference to it -- Immer.js
             // or return { items: []};
