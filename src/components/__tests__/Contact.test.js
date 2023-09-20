@@ -25,7 +25,7 @@ describe("Contact us page test case", () => {
     
         //Querrying
         const inputBoxes = screen.getAllByRole("textbox");  //if multiple items with same role use ALL
-        console.log(inputBoxes[0]);   //react element is returned(jsx) --object--react fiber node-- virtual dom object
+       // console.log(inputBoxes[0]);   //react element is returned(jsx) --object--react fiber node-- virtual dom object
         //Assertion
         expect(inputBoxes.length).toBe(2);
         //expect(inputBoxes.length).not.toBe(3);

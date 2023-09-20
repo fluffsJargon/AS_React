@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { logo } from "../assets/pastaLogo.png";
 import UserContext from "../utils/UserContext";
@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 export const Header = () => {
   const status = useOnlineStatus();
   const user = useContext(UserContext);
+  const [loginStatus, setLoginStatus] = useState('Login');
 
   // selector is a hook inside react - we are subscribing to the store by using selector
   const cartItems = useSelector((store) => store.cart.items)
@@ -35,6 +36,9 @@ export const Header = () => {
           </li>
           <li className="px-4 font-bold">
            <Link to="/cart">Cart ({cartItems.length} items)</Link> 
+          </li>
+          <li className="px-4 font-bold">
+           <button onClick={()=> setLoginStatus('Logout')}>{loginStatus}</button>
           </li>
           
         </ul>
