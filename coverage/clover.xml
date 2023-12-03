@@ -1,31 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1695207296514" clover="3.2.0">
-  <project timestamp="1695207296514" name="All files">
-    <metrics statements="35" coveredstatements="29" conditionals="2" coveredconditionals="1" methods="15" coveredmethods="10" elements="52" coveredelements="40" complexity="0" loc="35" ncloc="35" packages="3" files="11" classes="11"/>
+<coverage generated="1695237541493" clover="3.2.0">
+  <project timestamp="1695237541493" name="All files">
+    <metrics statements="94" coveredstatements="89" conditionals="16" coveredconditionals="14" methods="40" coveredmethods="36" elements="150" coveredelements="139" complexity="0" loc="94" ncloc="94" packages="3" files="18" classes="18"/>
     <package name="components">
-      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="8"/>
+      <metrics statements="67" coveredstatements="65" conditionals="16" coveredconditionals="14" methods="30" coveredmethods="29"/>
+      <file name="Body.jsx" path="/Users/sakshi/Documents/code/AS_React/src/components/Body.jsx">
+        <metrics statements="24" coveredstatements="22" conditionals="6" coveredconditionals="5" methods="8" coveredmethods="7"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="47" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="20" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="98" count="42" type="stmt"/>
+      </file>
+      <file name="Cart.jsx" path="/Users/sakshi/Documents/code/AS_React/src/components/Cart.jsx">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+      </file>
       <file name="ContactUs.tsx" path="/Users/sakshi/Documents/code/AS_React/src/components/ContactUs.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="3" type="stmt"/>
       </file>
       <file name="Header.jsx" path="/Users/sakshi/Documents/code/AS_React/src/components/Header.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="14" count="15" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
+      </file>
+      <file name="MenuItemList.jsx" path="/Users/sakshi/Documents/code/AS_React/src/components/MenuItemList.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
       </file>
       <file name="RestCard.tsx" path="/Users/sakshi/Documents/code/AS_React/src/components/RestCard.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="44" type="stmt"/>
+        <line num="8" count="44" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="26" count="14" type="stmt"/>
+      </file>
+      <file name="RestCategory.tsx" path="/Users/sakshi/Documents/code/AS_React/src/components/RestCategory.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="5" count="16" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="16" type="stmt"/>
+      </file>
+      <file name="RestarauntMenu.jsx" path="/Users/sakshi/Documents/code/AS_React/src/components/RestarauntMenu.jsx">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="48" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="28" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+      </file>
+      <file name="Shimmer.tsx" path="/Users/sakshi/Documents/code/AS_React/src/components/Shimmer.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
       <file name="sum.js" path="/Users/sakshi/Documents/code/AS_React/src/components/sum.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -43,40 +112,51 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="19" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+      <metrics statements="27" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="7"/>
       <file name="UserContext.js" path="/Users/sakshi/Documents/code/AS_React/src/utils/UserContext.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
       </file>
       <file name="appStore.js" path="/Users/sakshi/Documents/code/AS_React/src/utils/appStore.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
       </file>
       <file name="cartSlice.js" path="/Users/sakshi/Documents/code/AS_React/src/utils/cartSlice.js">
-        <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
       </file>
       <file name="constants.js" path="/Users/sakshi/Documents/code/AS_React/src/utils/constants.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
       </file>
       <file name="useOnlineStatus.tsx" path="/Users/sakshi/Documents/code/AS_React/src/utils/useOnlineStatus.tsx">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+      </file>
+      <file name="useRestarauntMenu.tsx" path="/Users/sakshi/Documents/code/AS_React/src/utils/useRestarauntMenu.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
       </file>
     </package>
   </project>

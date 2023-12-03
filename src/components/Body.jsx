@@ -43,7 +43,6 @@ export const Body = () => {
       <h3>Looks like you are offline!! Please check ur shitty connection!</h3>
     );
   //Conditional rendering
-  console.log(listOfRest)
 
   return listOfRest.length === 0 ? (
     <Shimmer />
@@ -53,6 +52,7 @@ export const Body = () => {
         <div className="flex">
           <input
             value={inputVal}
+            data-testid="search-input"
             className=" border-black border w-40 px-4 mx-2"
             onChange={(e) => {
               setInputVal(e.target.value);

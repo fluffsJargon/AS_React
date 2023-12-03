@@ -6,7 +6,7 @@ export  const RestCard = ({resData}) => {
   const { cloudinaryImageId, name, cuisines, avgRatingString } = resData?.info;
 
   return (
-    <div className="h-[400px] w-[250px] m-2 p-2  bg-gray-100 rounded-lg hover:bg-gray-200 hover:border hover:border-black">
+    <div data-testid="res-card"className="h-[400px] w-[250px] m-2 p-2  bg-gray-100 rounded-lg hover:bg-gray-200 hover:border hover:border-black">
       <img
         className="w-[250] h-[250] rounded-md"
         src={

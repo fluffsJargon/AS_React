@@ -16,7 +16,7 @@ export default function MenuItemList({itemList}) {
     }
   return (
     itemList.map((item) => (
-        <div className='flex justify-between m-2 p-2 border-b-2 '> 
+        <div data-testid='food-item' key={item?.card?.info.name} className='flex justify-between m-2 p-2 border-b-2 '> 
           <div className='flex  flex-col w-4/6'>
            <span className='text-left font-bold'>{item?.card?.info.name}</span>
            <span className='text-left  text-sm '>Rs {item?.card?.info?.price/100}</span>
