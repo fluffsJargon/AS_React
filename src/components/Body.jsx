@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { REST_URL } from "../utils/constants";
 import UserContext from "../utils/UserContext";
+import * as resList from './mocks/mockResListData.json'
 
 // Normal JS variable
 // let restList = swiggyData.restaurants;
@@ -24,15 +25,16 @@ export const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      REST_URL
-    );
-    const json = await data.json();
-    //Optional chaining
-    const newList =
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-
+    // const data = await fetch(
+    //   REST_URL
+    // );
+    // const json = await data.json();
+    // //Optional chaining
+    // const newList =
+    //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+    //     ?.restaurants;
+    const newList = (resList)?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    console.log(newList)
     setListOfRest(newList);
     setFilteredListOfRest(newList);
   };
