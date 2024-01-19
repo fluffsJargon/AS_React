@@ -7,9 +7,21 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import { REST_URL } from "../utils/constants";
 import UserContext from "../utils/UserContext";
 import * as resList from './mocks/mockResListData.json'
+import BaseButton from "./common/BaseButton";
 
 // Normal JS variable
 // let restList = swiggyData.restaurants;
+type resList = {
+ info : {
+  name : string
+ }
+}
+type restaurant = {
+  info : {
+    id:string,
+    avgRating:number
+  }
+}
 
 export const Body = () => {
   //Local state variable by react
@@ -19,6 +31,7 @@ export const Body = () => {
 
   const RestCardPromoted = withPromotedLabel(RestCard);
   const {loggedInUser, setUserName} = useContext(UserContext);
+  const {theme, setThemeValue} = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -35,8 +48,8 @@ export const Body = () => {
     //     ?.restaurants;
     const newList = (resList)?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     console.log(newList)
-    setListOfRest(newList);
-    setFilteredListOfRest(newList);
+    setListOfRest(newList as []);
+    setFilteredListOfRest(newList as []);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -49,7 +62,7 @@ export const Body = () => {
   return listOfRest.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="body back">
       <div className="filter">
         <div className="flex">
           <input
@@ -60,18 +73,15 @@ export const Body = () => {
               setInputVal(e.target.value);
             }}
           />
-          <button
-            className=" border-black border w-20 bg-green-50 rounded-lg"
+          <BaseButton
+            buttonLabel="Search"
             onClick={() => {
-              const filteredList = listOfRest.filter((res) =>
-                res.info.name.toLowerCase().includes(inputVal.toLowerCase())
+              const filteredList = listOfRest.filter((res: resList) =>
+                res?.info?.name.toLowerCase().includes(inputVal.toLowerCase())
               );
               setFilteredListOfRest(filteredList);
             }}
-          >
-            Search
-          </button>
-
+          />
             <label className='mx-4'>Username: </label>
           <input
             value={loggedInUser}
@@ -81,6 +91,15 @@ export const Body = () => {
 
             }}
           />
+          <div className="mx-4 "><BaseButton
+            buttonLabel="Change Theme"
+            onClick={() => {
+              theme === 'light'? 
+              setThemeValue('dark'): setThemeValue('light');
+              
+            }}
+          /></div>
+          
         </div>
         {/* <button
           className="filter-btn"
@@ -96,7 +115,7 @@ export const Body = () => {
         </button> */}
       </div>
       <div className="flex flex-wrap">
-        {filteredListOfRest.map((restaurant) => (
+        {filteredListOfRest.map((restaurant:restaurant) => (
           <Link
             className=""
             key={restaurant.info.id}
